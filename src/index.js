@@ -5,7 +5,11 @@ import {createStore, applyMiddleware} from 'redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import {syncHistoryWithStore} from 'react-router-redux'
-import {Router,Route, browserHistory} from 'react-router'
+import {
+     Router,
+        Route,
+        Link
+} from 'react-router-dom'
 
 import {Provider} from 'react-redux'
 
@@ -34,7 +38,7 @@ const history = createHistory()
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            <Switch>
+            
                 <Route exact path='/' component={Lending} />
                 <Route path='/trade/:id' component={Coin} />
                 <Route exact path='/fund' component={Price} />
@@ -47,7 +51,7 @@ ReactDOM.render(
                 <Route path='/SignIp' component={SignIp} />
                 <Route path='/SignUp' component={SignUp} />
                 <Route path='/news/1' component={New_page} />
-            </Switch>
+            
         </Router>
         
 
